@@ -2,7 +2,7 @@
 #
 # sipd		This shell script takes care of starting and stopping sipd
 #
-# chkconfig:    2345 20 80
+# chkconfig:	2345 20 80
 # description:	sipd
 # processname:	sipd
 #
@@ -15,18 +15,23 @@
 . /etc/sysconfig/network
 
 # Check that networking is up.
-if is_no "${NETWORKING}"; then
-	msg_network_down sipd
-	exit 1
+if is_yes "${NETWORKING}"; then
+	if [ ! -f /var/lock/subsys/network ]; then
+		msg_network_down sipd
+		exit 1
+	fi
+else
+	exit 0
 fi
+
 
 # See how we were called.
 case "$1" in
   start)
-        # Start daemons.
+	# Start daemons.
 	if [ ! -f /var/lock/subsys/sipd ]; then
 		if [ ! -f /etc/sipd/license ]; then
-			echo "Put license file in /etc/sipd/license"
+			nls "Put license file in /etc/sipd/license"
 			exit 1
 		fi
 		msg_starting sipd
@@ -35,6 +40,7 @@ case "$1" in
 		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/sipd
 	else
 		msg_already_running sipd
+		exit 1
 	fi
 	;;
   stop)
@@ -48,14 +54,20 @@ case "$1" in
 		exit 1
 	fi
 	;;
-  restart)
+  restart|reload)
 	$0 stop
 	$0 start
+	;;
+  force-reload)
+	$0 stop && $0 start
+	exit $?
 	;;
   status)
 	status sipd
 	;;
   *)
-	msg_usage "$0 {start|stop|restart|status}"
+	msg_usage "$0 {start|stop|restart|reload|force-reload|status}"
 	exit 1
 esac
+
+exit $RETVAL
