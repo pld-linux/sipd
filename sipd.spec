@@ -92,10 +92,10 @@ done
 cd ..
 
 #rm -f missing
-#%{__libtoolize}
-#%{__aclocal}
-#%{__autoconf}
-#%{__automake}
+#%%{__libtoolize}
+#%%{__aclocal}
+#%%{__autoconf}
+#%%{__automake}
 #cp %{_includedir}/mysql/mysql.h libcine
 %configure2_13 \
 	--with-db="%{_prefix}" \
