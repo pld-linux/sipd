@@ -114,8 +114,8 @@ install -d $RPM_BUILD_ROOT{/var/lib/sipd/logs,%{_webdir}}
 
 install sipd/sipd $RPM_BUILD_ROOT%{_sbindir}
 install sipd/sipd.conf $RPM_BUILD_ROOT%{_sysconfdir}/sipd
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/sipd
-install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/sipd
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/sipd
+install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/sipd
 install sipd/gateways.sample $RPM_BUILD_ROOT%{_sysconfdir}/sipd
 install tools/canonicalize/dialplan.sample $RPM_BUILD_ROOT%{_sysconfdir}/sipd
 
@@ -170,8 +170,8 @@ fi
 %config(noreplace) %{_sysconfdir}/sipd/sipd.conf
 %config(noreplace) %{_sysconfdir}/sipd/gateways.sample
 %config(noreplace) %{_sysconfdir}/sipd/dialplan.sample
-%config(noreplace) %{_sysconfdir}/sysconfig/sipd
-%attr(754,root,root) %{_sysconfdir}/rc.d/init.d/sipd
+%config(noreplace) /etc/sysconfig/sipd
+%attr(754,root,root) /etc/rc.d/init.d/sipd
 %dir /var/lib/sipd
 %dir /var/lib/sipd/logs
 /var/lib/sipd/gateways.sample
