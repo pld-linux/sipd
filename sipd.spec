@@ -23,6 +23,8 @@ BuildRequires:	tcl-devel
 #BuildRequires:	automake
 #BuildRequires:	libtool
 #BuildRequires:	libwrap-devel
+PreReq:		rc-scripts
+Requires(post,preun):	/sbin/chkconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_webdir		/home/services/httpd/cgi-bin/sipd
