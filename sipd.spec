@@ -2,7 +2,7 @@ Summary:	SIP proxy, redirect and registrar server
 Summary(pl):	Serwer SIP rejestruj±cy, przekierowuj±cy i robi±cy proxy
 Name:		sipd
 Version:	1.17
-Release:	0.2
+Release:	0.3
 License:	commercial
 Group:		Networking/Daemons
 Source0:	%{name}-%{version}.tar.gz
@@ -10,6 +10,7 @@ Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-shared_mysqllib.patch
 Patch1:		%{name}-system_apps.patch
+Patch2:		%{name}-fork.patch
 URL:		http://www.cs.columbia.edu/IRT/cinema/
 BuildRequires:	autoconf
 BuildRequires:	db3-devel
@@ -59,6 +60,7 @@ tools for sipd
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 # Change tclsh location in all web-files:
