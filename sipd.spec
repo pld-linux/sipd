@@ -2,7 +2,7 @@ Summary:	SIP proxy, redirect and registrar server
 Summary(pl):	Serwer SIP rejestruj±cy, przekierowuj±cy i robi±cy proxy
 Name:		sipd
 Version:	1.17
-Release:	0.3
+Release:	1
 License:	commercial
 Group:		Networking/Daemons
 Source0:	%{name}-%{version}.tar.gz
