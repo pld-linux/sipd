@@ -1,0 +1,11 @@
+--- ./tools/fbsql/module.mk.shared_sql	Wed May 16 01:09:12 2001
++++ ./tools/fbsql/module.mk	Mon Sep 30 14:27:45 2002
+@@ -19,7 +19,7 @@
+ FBSQL_SRC := \
+ 	$(fbsql_dir)/fbsql.c
+ 
+-FBSQL_LIBS := $(MYSQL_STATIC_LIB) $(ZLIBLIBS) $(MATHLIBS) $(TCLLIBS)
++FBSQL_LIBS := $(MYSQL_SHARED_LIB) $(ZLIBLIBS) $(MATHLIBS) $(TCLLIBS)
+ 
+ FBSQL_MISC := \
+ 	$(fbsql_dir)/module.mk \
