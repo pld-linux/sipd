@@ -1,8 +1,8 @@
 Summary:	SIP proxy, redirect and registrar server
 Summary(pl):	Serwer SIP rejestruj±cy, przekierowuj±cy i robi±cy proxy
 Name:		sipd
-Version:	1.18
-Release:	0.7
+Version:	1.17
+Release:	0.2
 License:	commercial
 Group:		Networking/Daemons
 Source0:	%{name}-%{version}.tar.gz
@@ -41,6 +41,7 @@ Summary:	SIP proxy, redirect and registrar server
 Summary(pl):	Serwer SIP rejestruj±cy, przekierowuj±cy i robi±cy proxy
 Group:		Networking/Daemons
 Requires:	%{name}-tools = %{version}
+Requires:	cgi.tcl
 
 %description cgi
 cgi files for sipd
@@ -73,7 +74,7 @@ cd ..
 #%{__aclocal}
 #%{__autoconf}
 #%{__automake}
-cp %{_includedir}/mysql/mysql.h libcine
+#cp %{_includedir}/mysql/mysql.h libcine
 %configure2_13 \
 	--with-db="%{_prefix}" \
 	--with-ldap="%{_prefix}" \
@@ -99,7 +100,8 @@ install tools/canonicalize/dialplan.sample $RPM_BUILD_ROOT%{_sysconfdir}/sipd
 install tools/addsipuser/addsipuser $RPM_BUILD_ROOT%{_bindir}
 install tools/base64/base64-{decode,encode} $RPM_BUILD_ROOT%{_bindir}
 install tools/canonicalize/canonicalize $RPM_BUILD_ROOT%{_bindir}
-install tools/canonicalize/libcanon.so $RPM_BUILD_ROOT%{_libdir}
+# exists in 1.18
+#install tools/canonicalize/libcanon.so $RPM_BUILD_ROOT%{_libdir}
 install tools/fbsql/libfbsql.so $RPM_BUILD_ROOT%{_libdir}
 install tools/ishere/ishere $RPM_BUILD_ROOT%{_bindir}
 install tools/md5string/md5string $RPM_BUILD_ROOT%{_bindir}
@@ -133,14 +135,15 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc README doc/*.{txt,html,gif,css} sipd/{BUGS,README.*,TODO} scripts
-%doc tools/{addsipuser/*.html,canonicalize/*.{html,txt},ishere/*.html,tracker/*.html}
+%doc README doc/*.{html,gif,css} sipd/{BUGS,README.*,TODO} scripts
+%doc tools/{addsipuser/*.html,canonicalize/*.html,ishere/*.html,tracker/*.html}
 %attr(755,root,root) %{_bindir}/base64-*
 %attr(755,root,root) %{_bindir}/canonicalize
 %attr(755,root,root) %{_bindir}/ishere
 %attr(755,root,root) %{_bindir}/tracker
 %attr(755,root,root) %{_sbindir}/*
-%attr(755,root,root) %{_libdir}/libcanon.so
+# exists in 1.18
+#%attr(755,root,root) %{_libdir}/libcanon.so
 %dir %{_sysconfdir}/sipd
 %config(noreplace) %{_sysconfdir}/sipd/sipd.conf
 %config(noreplace) %{_sysconfdir}/sipd/gateways.sample
