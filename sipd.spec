@@ -17,7 +17,7 @@ URL:		http://www.cs.columbia.edu/IRT/cinema/
 BuildRequires:	db3-devel
 BuildRequires:	mysql-devel
 BuildRequires:	openldap-devel
-BuildRequires:	openssl-devel
+BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	tcl-devel
 #BuildRequires:	xerces-c-devel
 #BuildRequires:	automake
