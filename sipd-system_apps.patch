@@ -1,0 +1,32 @@
+--- ./web/where.tcl.systemlib	Mon Sep 30 15:27:37 2002
++++ ./web/where.tcl	Mon Sep 30 15:27:21 2002
+@@ -8,7 +8,7 @@
+ # directory.
+ 
+ # http://www.fastbase.co.nz/fbsql/index.html
+-load ./libfbsql.so
++load libfbsql.so
+ 
+ # -- generally, items below this line do not need to be modified --
+ # policy groups; should probably be a database table
+--- ./web/randomword.tcl.systemlib	Thu Apr 12 00:13:24 2001
++++ ./web/randomword.tcl	Mon Sep 30 15:50:49 2002
+@@ -4,7 +4,7 @@
+   set size [file size "wordlist"]
+   set p ""
+   for {set i 0} {$i < $n} {incr i} {
+-    scan "[exec ./random32]" "%f" r
++    scan "[exec /usr/bin/random32]" "%f" r
+     seek $f [expr round($r/pow(2,32) * $size)]
+     lappend p [lindex [read $f 50] 1]
+   }
+--- ./web/util.tcl.systemlib	Wed Jul 11 19:42:52 2001
++++ ./web/util.tcl	Mon Sep 30 15:53:17 2002
+@@ -1,6 +1,6 @@
+ # Return MD5 hash of concatenation of user:realm:pw.
+ proc hash {user realm pw} {
+-  return [lindex [exec ./md5string "$user:$realm:$pw"] 0]
++  return [lindex [exec /usr/bin/md5string "$user:$realm:$pw"] 0]
+ }
+ 
+ 
