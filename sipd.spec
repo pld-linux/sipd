@@ -13,7 +13,7 @@ Patch0:		%{name}-shared_mysqllib.patch
 Patch1:		%{name}-system_apps.patch
 Patch2:		%{name}-fork.patch
 URL:		http://www.cs.columbia.edu/IRT/cinema/
-BuildRequires:	autoconf
+#BuildRequires:	autoconf
 BuildRequires:	db3-devel
 BuildRequires:	mysql-devel
 BuildRequires:	openldap-devel
@@ -38,6 +38,19 @@ script in any scripting language or executable format understood by
 the server that will be executed when receiving a call. The scripting
 interface conforms to the SIP cgi-bin interface (RFC 3050).
 
+%description -l pl
+sipd jest serwerem SIP przekierowuj±cym, buforuj±cym i rejestruj±cym,
+udostêpniaj±cym mapowanie nazw i us³ugi zwi±zane z lokalizowaniem
+u¿ytkownika i skryptami. Mo¿e u¿ywaæ zewnêtrznych funkcji do
+wykonywania w³a¶ciwego rozwi±zywania aliasów (w³±cznie z nazwami
+grup), mapowania nazw i lokalizowania u¿ytkowników. sipd pozwala
+tak¿e u¿ytkownikom na rejestrowanie na serwerze swojej aktualnej
+lokalizacji. U¿ytkownicy mog± byæ zarejestrowani w wielu
+lokalizacjach. Ka¿dy u¿ytkownik mo¿e zarejestrowaæ skrypt w dowolnym
+jêzyku skryptowym lub formacie wykonywalnym rozumianym przez serwer;
+skrypt ten bêdzie wykonywany po odebraniu po³±czenia. Interfejs
+skryptowy jest zgodny z interfejsem SIP cgi-bin (RFC 3050).
+
 %package cgi
 Summary:	SIP proxy, redirect and registrar server
 Summary(pl):	Serwer SIP rejestruj±cy, przekierowuj±cy i robi±cy proxy
@@ -46,7 +59,10 @@ Requires:	%{name}-tools = %{version}
 Requires:	cgi.tcl
 
 %description cgi
-cgi files for sipd
+cgi files for sipd.
+
+%description cgi -l pl
+Pliki cgi dla sipd.
 
 %package tools
 Summary:	SIP proxy, redirect and registrar server
@@ -55,7 +71,10 @@ Group:		Networking/Daemons
 Requires:	bind-utils
 
 %description tools
-tools for sipd
+tools for sipd.
+
+%description tools -l pl
+Narzêdzia dla sipd.
 
 %prep
 %setup -q
