@@ -8,6 +8,7 @@ Group:		Networking/Daemons
 Source0:	%{name}-%{version}.tar.gz
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
+NoSource:	0
 Patch0:		%{name}-shared_mysqllib.patch
 Patch1:		%{name}-system_apps.patch
 Patch2:		%{name}-fork.patch
