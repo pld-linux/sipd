@@ -25,7 +25,7 @@ BuildRequires:	tcl-devel
 #BuildRequires:	libwrap-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_webdir		/home/httpd/cgi-bin/sipd
+%define		_webdir		/home/services/httpd/cgi-bin/sipd
 
 %description
 sipd is a SIP redirect, forking proxy and registration server that
