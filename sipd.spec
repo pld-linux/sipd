@@ -1,5 +1,5 @@
 Summary:	SIP proxy, redirect and registrar server
-Summary(pl.UTF-8):   Serwer SIP rejestrujący, przekierowujący i robiący proxy
+Summary(pl.UTF-8):	Serwer SIP rejestrujący, przekierowujący i robiący proxy
 Name:		sipd
 Version:	1.17
 Release:	1
@@ -55,7 +55,7 @@ skryptowy jest zgodny z interfejsem SIP cgi-bin (RFC 3050).
 
 %package cgi
 Summary:	SIP proxy, redirect and registrar server
-Summary(pl.UTF-8):   Serwer SIP rejestrujący, przekierowujący i robiący proxy
+Summary(pl.UTF-8):	Serwer SIP rejestrujący, przekierowujący i robiący proxy
 Group:		Networking/Daemons
 Requires:	%{name}-tools = %{version}
 Requires:	cgi.tcl
@@ -68,7 +68,7 @@ Pliki cgi dla sipd.
 
 %package tools
 Summary:	SIP proxy, redirect and registrar server
-Summary(pl.UTF-8):   Serwer SIP rejestrujący, przekierowujący i robiący proxy
+Summary(pl.UTF-8):	Serwer SIP rejestrujący, przekierowujący i robiący proxy
 Group:		Networking/Daemons
 Requires:	bind-utils
 
