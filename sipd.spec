@@ -1,5 +1,5 @@
 Summary:	SIP proxy, redirect and registrar server
-Summary(pl):	Serwer SIP rejestruj±cy, przekierowuj±cy i robi±cy proxy
+Summary(pl.UTF-8):   Serwer SIP rejestrujÄ…cy, przekierowujÄ…cy i robiÄ…cy proxy
 Name:		sipd
 Version:	1.17
 Release:	1
@@ -40,22 +40,22 @@ script in any scripting language or executable format understood by
 the server that will be executed when receiving a call. The scripting
 interface conforms to the SIP cgi-bin interface (RFC 3050).
 
-%description -l pl
-sipd jest serwerem SIP przekierowuj±cym, buforuj±cym i rejestruj±cym,
-udostêpniaj±cym mapowanie nazw i us³ugi zwi±zane z lokalizowaniem
-u¿ytkownika i skryptami. Mo¿e u¿ywaæ zewnêtrznych funkcji do
-wykonywania w³a¶ciwego rozwi±zywania aliasów (w³±cznie z nazwami
-grup), mapowania nazw i lokalizowania u¿ytkowników. sipd pozwala
-tak¿e u¿ytkownikom na rejestrowanie na serwerze swojej aktualnej
-lokalizacji. U¿ytkownicy mog± byæ zarejestrowani w wielu
-lokalizacjach. Ka¿dy u¿ytkownik mo¿e zarejestrowaæ skrypt w dowolnym
-jêzyku skryptowym lub formacie wykonywalnym rozumianym przez serwer;
-skrypt ten bêdzie wykonywany po odebraniu po³±czenia. Interfejs
+%description -l pl.UTF-8
+sipd jest serwerem SIP przekierowujÄ…cym, buforujÄ…cym i rejestrujÄ…cym,
+udostÄ™pniajÄ…cym mapowanie nazw i usÅ‚ugi zwiÄ…zane z lokalizowaniem
+uÅ¼ytkownika i skryptami. MoÅ¼e uÅ¼ywaÄ‡ zewnÄ™trznych funkcji do
+wykonywania wÅ‚aÅ›ciwego rozwiÄ…zywania aliasÃ³w (wÅ‚Ä…cznie z nazwami
+grup), mapowania nazw i lokalizowania uÅ¼ytkownikÃ³w. sipd pozwala
+takÅ¼e uÅ¼ytkownikom na rejestrowanie na serwerze swojej aktualnej
+lokalizacji. UÅ¼ytkownicy mogÄ… byÄ‡ zarejestrowani w wielu
+lokalizacjach. KaÅ¼dy uÅ¼ytkownik moÅ¼e zarejestrowaÄ‡ skrypt w dowolnym
+jÄ™zyku skryptowym lub formacie wykonywalnym rozumianym przez serwer;
+skrypt ten bÄ™dzie wykonywany po odebraniu poÅ‚Ä…czenia. Interfejs
 skryptowy jest zgodny z interfejsem SIP cgi-bin (RFC 3050).
 
 %package cgi
 Summary:	SIP proxy, redirect and registrar server
-Summary(pl):	Serwer SIP rejestruj±cy, przekierowuj±cy i robi±cy proxy
+Summary(pl.UTF-8):   Serwer SIP rejestrujÄ…cy, przekierowujÄ…cy i robiÄ…cy proxy
 Group:		Networking/Daemons
 Requires:	%{name}-tools = %{version}
 Requires:	cgi.tcl
@@ -63,20 +63,20 @@ Requires:	cgi.tcl
 %description cgi
 cgi files for sipd.
 
-%description cgi -l pl
+%description cgi -l pl.UTF-8
 Pliki cgi dla sipd.
 
 %package tools
 Summary:	SIP proxy, redirect and registrar server
-Summary(pl):	Serwer SIP rejestruj±cy, przekierowuj±cy i robi±cy proxy
+Summary(pl.UTF-8):   Serwer SIP rejestrujÄ…cy, przekierowujÄ…cy i robiÄ…cy proxy
 Group:		Networking/Daemons
 Requires:	bind-utils
 
 %description tools
 tools for sipd.
 
-%description tools -l pl
-Narzêdzia dla sipd.
+%description tools -l pl.UTF-8
+NarzÄ™dzia dla sipd.
 
 %prep
 %setup -q
